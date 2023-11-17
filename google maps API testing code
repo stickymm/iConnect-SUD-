@@ -1,0 +1,52 @@
+import googlemaps
+import pprint
+import time
+import os
+from pprint import pprint
+
+API_KEY = "AIzaSyDtm_5oYPc33QAUl4zl4b9c_klw_hsC3_Q"
+
+#define client
+gmaps = googlemaps.Client(key = API_KEY)
+
+#Get place id
+   
+location_name = 'insert'
+response = gmaps.places(query=location_name)
+results = response.get('results')
+
+pprint(results)
+
+"""
+#Define places search
+places_result = gmaps.places_nearby(location = '-33.8670522, 151.1957362', radius = 5000, open_now = False, type = 'cafe')
+
+
+#prints the firstpage
+#pprint.pprint(places_result)
+
+
+
+#if want the next page wait for 3 seconds
+time.sleep(3)
+
+places_result = gmaps.places_nearby(page_token = place_result['next_page_token'])
+
+#prints rest of pages
+
+pprint.pprint(places_result
+
+
+
+#loop through results
+
+for place in places_result['results']:
+
+    my_place_id = place['place_id']
+    #what fields we want returned
+    my_fields = ['name', 'adr_address', 'formatted_phone_number', 'opening_hours', 'type', 'website']
+
+    place_details = gmaps.place(place_id = my_place_id, fields = my_fields)
+
+    print(place_details)
+"""
